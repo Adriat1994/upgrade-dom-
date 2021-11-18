@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<h2 class="fn-insert-here"></h2>
+	<p class="fn-remove-me">Eliminame!</p>
+  <p>No me elimines!</p>
+  <p>No me elimines!</p>
+  <p class="fn-remove-me">Eliminame!</p>
+  <p>No me elimines!</p>
+  <p class="fn-remove-me">Eliminame!</p>
+  <p class="fn-remove-me">Eliminame!</p>
+  <p>No me elimines!</p>
+	<div></div><div></div>
+	<div class="fn-insert-here"></div>
+  <div class="fn-insert-here"></div>
+
+  <script>
+    window.onload = function() {
+    addElement();
+    addElement2();
+    addElement3();
+    addElement4();
+
+    modificarTexto1();
+
+    crearLista1();
+
+    eliminarElemento();
+
+    addElement5();
+    }
+    //Iteración 1
+    function addElement() {
+    let div1 = document.createElement('div');
+    div1.className = "div1";
+    document.body.appendChild(div1);
+    }
+
+    //Iteración 2
+    function addElement2() {
+    let div2 = document.createElement('div');
+    div2.className = "div2";
+    let p1 = document.createElement('p');
+    p1.className = "p1";
+    document.body.appendChild(div2);
+    document.querySelector(".div2").appendChild(p1);
+    }
+
+    //Iteración 3
+    function addElement3() {
+    let div3 = document.createElement('div');
+    div3.className = "div3";
+    
+    document.body.appendChild(div3);
+
+      for (let i = 0; i < 7; i++) {
+        let p2 = document.createElement('p');
+        p2.className = "p2";
+        document.querySelector(".div3").appendChild(p2);
+      }    
+    }
+  
+    //Iteración 4
+    function addElement4 () {
+    let p3 = document.createElement('p');
+    p3.className = "p3";
+    p3.textContent = "Soy dinámico!"
+
+    document.body.appendChild(p3);
+    }
+
+    //Iteración 5
+    function modificarTexto1 () {
+	  document.querySelector(".fn-insert-here").textContent = 'Wubba Lubba dub dub';
+    }
+
+    //Iteración 6
+    function crearLista1 () {
+    let ul = document.createElement("ul");
+    ul.className = "lista1";
+
+    document.body.appendChild(ul);
+
+    const apps = ['Facebook', 'Netflix', 'Instagram', 'Snapchat', 'Twitter']
+
+    for (let i = 0; i <apps.length; i++ ) {
+      let p4 = document.createElement('p');
+      p4.className = "p4";
+      document.querySelector(".lista1").appendChild(p4).textContent = apps[i];
+      }
+    }
+  
+    //Iteración 7
+    function eliminarElemento () {
+	    
+      let eliminar0 = document.querySelectorAll(".fn-remove-me")[0];
+      let eliminar1 = document.querySelectorAll(".fn-remove-me")[1];
+      let eliminar2 = document.querySelectorAll(".fn-remove-me")[2];
+      let eliminar3 = document.querySelectorAll(".fn-remove-me")[3];
+
+      document.body.removeChild(eliminar0);
+      document.body.removeChild(eliminar1);
+      document.body.removeChild(eliminar2);
+      document.body.removeChild(eliminar3);
+
+      
+    }
+
+
+    //Iteración 8
+    function addElement5 () {
+    let p5 = document.createElement('p');
+    p5.textContent = "Voy en medio!";
+
+    var divAnterior = document.querySelectorAll("div")[1];
+
+    document.body.insertBefore(p5, divAnterior);
+    }
+
+
+    //Iteración 9
+
+    function insertarP1 () {
+      var selecionarDivs0 = document.querySelectorAll("div.fn-insert-here")[0];
+      
+      let p6 = document.createElement("p");
+      p6.textContent = "Voy dentro!";
+
+      selecionarDivs0.appendChild(p6);    
+
+    }
+
+    insertarP1();
+
+
+    function insertarP2 () {
+      
+      var selecionarDivs1 = document.querySelectorAll("div.fn-insert-here")[1];
+      let p7 = document.createElement("p");
+      p7.textContent = "Voy dentro!";
+
+      selecionarDivs1.appendChild(p7);    
+
+    }
+
+    insertarP2();
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>
